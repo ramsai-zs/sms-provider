@@ -9,7 +9,7 @@ type K20221012142722 struct {
 }
 
 func (k K20221012142722) Up(d *datastore.DataStore, logger log.Logger) error {
-	_, err := d.DB().Exec(createTable)
+	_, err := d.DB().Exec(createTableProvider)
 	if err != nil {
 		return err
 	}
@@ -18,7 +18,7 @@ func (k K20221012142722) Up(d *datastore.DataStore, logger log.Logger) error {
 }
 
 func (k K20221012142722) Down(d *datastore.DataStore, logger log.Logger) error {
-	_, err := d.DB().Exec(dropTable)
+	_, err := d.DB().Exec(dropTableProvider)
 	if err != nil {
 		return err
 	}
