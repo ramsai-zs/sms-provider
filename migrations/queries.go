@@ -1,10 +1,31 @@
 package migrations
 
 const (
-	createTable = `CREATE TABLE IF NOT EXISTS provider(
+	createTableProvider = `CREATE TABLE IF NOT EXISTS Provider(
+      ID VARCHAR(40) NOT NULL UNIQUE,
+      URL VARCHAR(50) NOT NULL,
+	  ChannelRefID VARCHAR(40) NOT NULL,
+      Name VARCHAR(80) NOT NULL,
+	  PRIMARY KEY(ID))`
+
+	dropTableProvider = `DROP TABLE IF EXISTS Provider`
+
+	createStatusEnum = `DO $$ BEGIN
+               IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'status') THEN
+               CREATE TYPE status AS ENUM ('YES','NO');
+               END IF;
+               END$$;;`
+
+	dropStatusEnum = `DROP TYPE IF EXISTS status CASCADE`
+
+	createTableMessage = `CREATE TABLE IF NOT EXISTS Message(
       ID VARCHAR(40) PRIMARY KEY,
-      URL VARCHAR(50), 
-       channelRefID VARCHAR(40) NOT NULL,
-       name VARCHAR(80))`
-	dropTable = `DROP TABLE IF EXISTS provider`
+      Message VARCHAR(100) NOT NULL, 
+	  Number VARCHAR(20) NOT NULL,
+      Transactional VARCHAR(50) NOT NULL,
+	  Status status NOT NULL DEFAULT 'NO',
+      Delivered_time TIMESTAMPZ,
+      PRIMARY KEY(ID))`
+
+	dropTableMessage = `DROP TABLE IF EXISTS Message`
 )
