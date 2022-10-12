@@ -3,8 +3,8 @@ package main
 import (
 	"developer.zopsmart.com/go/gofr/cmd/gofr/migration"
 	dbmigration "developer.zopsmart.com/go/gofr/cmd/gofr/migration/dbMigration"
-	"developer.zopsmart.com/go/gofr/examples/using-postgres/migrations"
 	"developer.zopsmart.com/go/gofr/pkg/gofr"
+	"sms-provider/migrations"
 	msghandler "sms-provider/handlers/message"
 	provhandler "sms-provider/handlers/provider"
 	"sms-provider/stores/message"
