@@ -4,9 +4,9 @@ import (
 	"developer.zopsmart.com/go/gofr/cmd/gofr/migration"
 	dbmigration "developer.zopsmart.com/go/gofr/cmd/gofr/migration/dbMigration"
 	"developer.zopsmart.com/go/gofr/pkg/gofr"
-	"sms-provider/migrations"
 	msghandler "sms-provider/handlers/message"
 	provhandler "sms-provider/handlers/provider"
+	"sms-provider/migrations"
 	"sms-provider/stores/message"
 	"sms-provider/stores/provider"
 )
