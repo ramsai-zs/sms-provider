@@ -29,7 +29,7 @@ func (s store) GetByID(ctx *gofr.Context, id string) (models.Message, error) {
 	panic("implement me")
 }
 
-func (s store) PUT(ctx *gofr.Context, id string) (models.Message, error) {
+func (s store) Patch(ctx *gofr.Context, id string) error {
 	//TODO implement me
 	panic("implement me")
 }

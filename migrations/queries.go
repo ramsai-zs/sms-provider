@@ -2,10 +2,10 @@ package migrations
 
 const (
 	createTableProvider = `CREATE TABLE IF NOT EXISTS Provider(
-      ID VARCHAR(40) PRIMARY KEY,
-      URL VARCHAR(50) NOT NULL,
-	  ChannelRefID VARCHAR(40) NOT NULL,
-      Name VARCHAR(80) NOT NULL)`
+      id VARCHAR(40) PRIMARY KEY,
+      url VARCHAR(50) NOT NULL,
+	  channelRefID VARCHAR(40) NOT NULL,
+      name VARCHAR(80) NOT NULL)`
 
 	dropTableProvider = `DROP TABLE IF EXISTS Provider`
 
@@ -18,12 +18,12 @@ const (
 	dropStatusEnum = `DROP TYPE IF EXISTS status CASCADE`
 
 	createTableMessage = `CREATE TABLE IF NOT EXISTS Message(
-      ID VARCHAR(40) PRIMARY KEY,
-      Message VARCHAR(100) NOT NULL, 
-	  Number VARCHAR(20) NOT NULL,
-      Transactional VARCHAR(50) NOT NULL,
-	  Status status NOT NULL DEFAULT 'NO',
-      Delivered_time TIMESTAMP)`
+      id VARCHAR(40) PRIMARY KEY,
+      message VARCHAR(100) NOT NULL, 
+	  number VARCHAR(20) NOT NULL,
+      transactional VARCHAR(50) NOT NULL,
+	  status status NOT NULL DEFAULT 'NO',
+      delivered_time TIMESTAMP)`
 
 	dropTableMessage = `DROP TABLE IF EXISTS Message`
 )
