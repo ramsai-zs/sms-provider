@@ -7,6 +7,6 @@ import (
 type Provider struct {
 	ID           uuid.UUID `json:"id"`
 	URL          string    `json:"URL"`
-	ChannelRefID string    `json:"channelRefID"`
+	ChannelRefID uuid.UUID `json:"channelRefID"`
 	Name         string    `json:"name"`
 }
