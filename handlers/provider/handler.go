@@ -9,6 +9,12 @@ type handler struct {
 	store stores.Provider
 }
 
+// New is a factory function to inject service in handler.
+// nolint:revive // handler has to be unexported
+func New(s stores.Provider) handler {
+	return handler{store: s}
+}
+
 func (h handler) Create(c *gofr.Context) (interface{}, error) {
 
 }
@@ -23,10 +29,4 @@ func (h handler) Update(c *gofr.Context) (interface{}, error) {
 
 func (h handler) Delete(c *gofr.Context) (interface{}, error) {
 
-}
-
-// New is a factory function to inject service in handler.
-// nolint:revive // handler has to be unexported
-func New(s stores.Provider) handler {
-	return handler{store: s}
 }
